@@ -1,10 +1,6 @@
 
 use good_lp::{variables, Expression, default_solver, SolverModel, solvers::coin_cbc::CoinCbcSolution, Solution};
 
-// vectors of the form
-//
-// [reaction_rate, concentration1, .. , concentrationN];
-
 struct Trial {
     rate: f64,
     cons: Vec<f64>
