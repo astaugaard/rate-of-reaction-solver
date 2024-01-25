@@ -58,11 +58,8 @@ fn solve(reaction_data: Equations) -> Option<RatesResults> {
     }
 
     let result:CoinCbcSolution = solution.solve().unwrap();
-    println!("done1");
-
 
     let orders:Vec<u64> = (0..num_orders).map(|i| result.value(orders[i]) as u64).collect();
-    println!("done");
     let k = result.value(pk).exp();
 
     Some(RatesResults { k: k, orders: orders })
